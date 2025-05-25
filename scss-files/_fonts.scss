@@ -1,0 +1,43 @@
+@mixin font-face($name, $path) {
+  @font-face {
+    font-family: $name;
+    src: url('#{$path}.woff2') format('woff2');
+  }
+}
+@each $name ,$path in $fonts{
+    @include font-face($name,$path);
+    .font-#{$name}{
+        font-weight:400;
+        font-size: 1rem;
+    }
+    .font-#{$name}-sm{
+        font-weight:400;
+        font-size:small;
+    }
+    .font-#{$name}-lg{
+        font-weight:400;
+        font-size:large;
+    }
+    .font-#{$name}-xl{
+        font-weight:400;
+        font-size: x-large;
+    }
+    .font-#{$name}-xxl{
+        font-weight:400;
+        font-size: xx-large;
+    }
+    .font-#{$name}-bold{
+        font-weight:bold;
+    }
+    .font-#{$name}-italic{
+        font-style: italic;
+    }
+   }
+    @each $colorName,$colorValue in $colors{
+        .font-C-#{$colorName}{
+            color: $colorValue;
+        }
+
+    }
+
+

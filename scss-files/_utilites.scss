@@ -1,0 +1,266 @@
+@each $property, $map in $utilities-numbered {
+    $prefix: map-get($map, "prefix");
+    $value: map-get($map, "value");
+
+    @for $i from 0 through 10 {
+        @if($property !="opacity" and $property !="letter-spacing" and $property !="outline") {
+            .#{$prefix}-#{$i*5} {
+                #{$property}: #{$i*5}px;
+            }
+        }
+
+        @if($property=="outline") {
+            .#{$prefix}-#{$i} {
+                #{$property}: #{$i*1}px;
+            }
+        }
+
+        @if($property=="opacity") {
+            .#{$prefix}-#{$i} {
+                opacity: $i*0.1;
+            }
+        }
+    }
+
+    @if ($property=="letter-spacing") {
+        @for $i from 1 through 2 {
+            .#{$prefix}-negative-#{$i} {
+                #{$property}:#{$i*-0.5}px;
+            }
+        }
+
+        @for $i from 0 through 10 {
+            .#{$prefix}-#{$i} {
+                #{$property}:#{$i*1}px;
+            }
+
+            .#{$prefix}-#{$i}-p-5 {
+                #{$property}:#{($i*1)+0.5}px;
+            }
+        }
+    }
+
+    @if($property=="outline") {
+        @for $i from 1 through 15 {
+            .#{$property}-width-#{$i} {
+                #{$property}-width:#{$i}px;
+            }
+        }
+    }
+
+}
+
+;
+
+@each $property, $map in $utilities-other {
+    $prefix: map-get($map, "prefix");
+    $value: map-get($map, "value");
+
+    @each $propertyvalue in $value {
+        @if($property !="text-overflow" and $property !="position") {
+            .#{$prefix}-#{$propertyvalue} {
+                #{$property}: $propertyvalue;
+            }
+        }
+
+        @if($property=="text-overflow") {
+            @if($propertyvalue !="" and $propertyvalue !="-") {
+                .#{$prefix}-#{$propertyvalue} {
+                    #{$property}: $propertyvalue;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+
+            @if($propertyvalue=="") {
+                .#{$prefix}-nospace {
+                    #{$property}: $propertyvalue;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+
+            @if($propertyvalue=="-") {
+                .#{$prefix}-hypen {
+                    #{$property}: $propertyvalue;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        @if($property=="position") {
+            @if($propertyvalue=="static") {
+                .#{$prefix}-#{$propertyvalue} {
+                    #{$property}: $propertyvalue;
+                }
+            }
+
+            @else {
+                @for $i from 0 through 20 {
+                    .#{$prefix}-#{$propertyvalue}-t_r {
+                        #{$property}: $propertyvalue;
+                        top:#{$i*10}px;
+                        right:#{$i*10}px;
+                    }
+
+                    .#{$prefix}-#{$propertyvalue}-b_l {
+                        #{$property}: $propertyvalue;
+                        bottom:#{$i*10}px;
+                        left: #{$i*10}px;
+                    }
+
+                    .#{$prefix}-#{$propertyvalue}-t-l {
+                        #{$property}: $propertyvalue;
+                        top: #{$i*10}px;
+                        left:#{$i*10}px;
+                    }
+
+                    .#{$prefix}-#{$propertyvalue}-b_r {
+                        #{$property}: $propertyvalue;
+                        bottom:#{$i*10}px;
+                        right:#{$i*10}px;
+                    }
+
+                    .#{$prefix}-#{$propertyvalue}-t {
+                        #{$property}: $propertyvalue;
+                        top:#{$i*10}px;
+                    }
+                    .#{$prefix}-#{$propertyvalue}-b {
+                        #{$property}: $propertyvalue;
+                        bottom:#{$i*10}px;
+                    }
+                    .#{$prefix}-#{$propertyvalue}-l {
+                        #{$property}: $propertyvalue;
+                        left:#{$i*10}px;
+                    }
+                    .#{$prefix}-#{$propertyvalue}-r {
+                        #{$property}: $propertyvalue;
+                        right:#{$i*10}px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+;
+
+@each $property, $map in $numbered-values {
+    $prefix: map-get($map, "prefix");
+
+    @for $i from 1 through 12 {
+        @if($property !="line-height") {
+            .#{$prefix}-#{$i*1} {
+                #{$property}: $i*1;
+            }
+        }
+
+        @if($property =="line-height") {
+            .#{$prefix}-#{$i*1} {
+                #{$property}: ($i*0.3);
+            }
+        }
+    }
+
+}
+
+;
+
+$prefix: map-get($border-style, "prefix");
+$values: map-get($border-style, "value");
+
+@each $value in $values {
+    .#{$prefix}-#{$value} {
+        border-style: $value;
+    }
+
+    .otl-s-#{$value} {
+        outline-style: $value;
+    }
+
+}
+
+;
+
+@each $property, $map in $colored-properties {
+    $prefix: map-get($map, "prefix");
+
+    @each $cName, $color in $colors {
+        .#{$prefix}-#{$cName} {
+            #{$property}: $color;
+        }
+    }
+}
+
+;
+
+$prefix: map-get($text-shadow-property, "prefix");
+$value: map-get($text-shadow-property, "values");
+$horizantalValue: map-get($value, "horizantal-offset");
+$verticalValue: map-get($value, "vertical-offset");
+$blurValaue: map-get($value, "blur-radius");
+
+@each $cName, $color in $colors {
+    @for $i from -10 through 10 {
+        @if ($i < 0) {
+            .#{$prefix}-lside-#{$cName}-#{abs($i)} {
+                text-shadow:#{ $horizantalValue*$i}px #{$verticalValue*$i}px #{$blurValaue*abs($i)}px #{$color};
+            }
+
+            .box-shd-lside-#{abs($i)} {
+                box-shadow:#{$horizantalValue*$i*2}px #{$verticalValue*$i*5}px #{$blurValaue*abs($i)}px #{$color};
+            }
+        }
+
+        @else if($i>0) {
+            .#{$prefix}-rside-#{$cName}-#{$i} {
+                text-shadow:#{$horizantalValue*$i}px #{$verticalValue*$i}px #{$blurValaue*abs($i)}px #{$color};
+            }
+
+            .box-shd-rside-#{$i} {
+                box-shadow:#{$horizantalValue*$i*5}px #{$verticalValue*$i*5}px #{$blurValaue*abs($i)}px #{$color};
+            }
+        }
+    }
+}
+
+;
+
+@mixin transition($tduration, $tproperty, $tdelay, $tfunction) {
+    transition-duration: $tduration;
+    transition-property: $tproperty;
+    transition-delay: $tdelay;
+    transition-timing-function: $tfunction;
+}
+
+$prefix: map-get($transition-values, "prefix");
+$valueMap: map-get($transition-values, "value");
+$tdurr: map-get($valueMap, "transition-duration");
+$tprop: map-get($valueMap, "transition-property");
+$tdly: map-get($valueMap, "transition-delay");
+$tTimeFn: map-get($valueMap, "transition-timing-function");
+
+@for $i from 1 through 10 {
+    @each $value in $tprop {
+        @each $value2 in $tTimeFn {
+            .#{$prefix}-#{$value2}-#{$value} {
+                @include transition(#{( $tdurr*$i )}s, $value, #{($tdly*$i)}s, $value2);
+            }
+        }
+    }
+}
+
+;
+
+@each $colorName, $colorValue in $colors {
+    .background-#{$colorName} {
+        background-color: $colorValue;
+    }
+
+    .color-#{$colorName} {
+        color: $colorValue;
+    }
+}
+
+;

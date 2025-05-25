@@ -1,0 +1,374 @@
+$white: white !default;
+$black: black !default;
+$orange: orange !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: pink !default;
+$teal: teal !default;
+$primary: blue !default;
+$secondary: gray !default;
+$success: green !default;
+$warning: yellow !default;
+$danger: red !default;
+$info: cyan !default;
+
+$colors: (
+  "white":$white,
+  "black":$black,
+  "indigo":$indigo,
+  "purple":$purple,
+  "pink":$pink,
+  "teal":$teal,
+  "primary":$primary,
+  "secondary":$secondary,
+  "success":$success,
+  "info":$info,
+  "warning":$warning,
+  "danger":$danger) !default;
+$fonts: (
+  'Dancing-Script': '../Fonts/DancingScript-Regular',
+  'Fira-Code': '../Fonts/FiraCode-Regular',
+  'Lato': '../Fonts/Lato-Black',
+  'Montserrat': '../Fonts/Montserrat-Black',
+  'Nunito': '../Fonts/Nunito-Black',
+  'Open-Sans': '../Fonts/OpenSans-Regular',
+  'Oswald': '../Fonts/Oswald-Regular',
+  'Playfair-Display': '../Fonts/PlayfairDisplay-Regular',
+  'Poppins': '../Fonts/Poppins-Black',
+  'PT-Serif': '../Fonts/PT_Serif-Web-Regular',
+  'Raleway': '../Fonts/Raleway-Regular',
+  'Roboto': '../Fonts/Roboto-Black',
+  'Ubuntu': '../Fonts/Ubuntu-B',
+  'Cabin':'../Fonts/Cabin-Regular-TTF',
+  'DMSans':'../Fonts/DMSans-Regular',
+  'Manrope':'../Fonts/Manrope-Regular',
+  'WorkSans':'../Fonts/WorkSans-Regular',
+  ) !default;
+
+$utilities-numbered: (
+  "padding":("prefix":"p",
+    "value":"0"
+  ),
+  "padding-top":("prefix":"pt",
+    "value":"0"
+  ),
+  "padding-bottom":("prefix":"pbt",
+    "value":"0"
+  ),
+  "padding-left":("prefix":"pl",
+    "value":"0"
+  ),
+  "padding-right":("prefix":"pr",
+    "value":"0"
+  ),
+  "margin":("prefix":"m",
+    "value":"0"
+  ),
+  "margin-right":("prefix":"mr",
+    "value":"0"
+  ),
+  "margin-left":("prefix":"ml",
+    "value":"0"
+  ),
+  "margin-top":("prefix":"mt",
+    "value":"0"
+  ),
+  "margin-bottom":("prefix":"mbt",
+    "value":"0"
+  ),
+
+  "border-radius":("prefix":"b-ra",
+    "value":"0"
+  ),
+  "border-bottom-left-radius":("prefix":"b-btl-ra",
+    "value":"0"
+  ),
+  "border-bottom-right-radius":("prefix":"b-btr-ra",
+    "value":"0"
+  ),
+  "border-top-right-radius":("prefix":"b-tr-ra",
+    "value":"0"
+  ),
+  "border-top-left-radius":("prefix":"b-tl-ra",
+    "value":"0"
+  ),
+  "border":("prefix":"b",
+    "value":"0"
+  ),
+  "border-right":("prefix":"b-rt",
+    "value":"0"
+  ),
+  "border-left":("prefix":"b-l",
+    "value":"0"
+  ),
+  "border-bottom":("prefix":"b-bt",
+    "value":"0"
+  ),
+  "border-top":("prefix":"b-t",
+    "value":"0"
+  ),
+  "opacity":("prefix":"o",
+    "value": "0"
+  ),
+  "gap":("prefix":"g",
+    "value":"0"
+  ),
+  "row-gap":("prefix":"rg",
+    "value":"0"
+  ),
+  "column-gap":("prefix":"cg",
+    "value":"0"
+  ),
+  "letter-spacing":("prefix":"lsp",
+    "value":"0"
+  ),
+  "outline":("prefix":"otl",
+    "value":"none"
+  )
+);
+
+$utilities-other :("overflow":("prefix":"Of",
+    "value":("scroll",
+      "visible",
+      "auto",
+      "hidden",
+
+    )),
+  "box-sizing":("prefix":"box-s",
+    "value":("border-box",
+      "content-box",
+    )),
+  "background-repeat":("prefix":"bg-re",
+    "value":("no-repeat",
+      "repeat",
+      "repeat-x",
+      "repeat-y",
+      "round",
+    )),
+  "border-collapse":("prefix":"br-col",
+    "value":("collapse",
+      "separate",
+    )),
+  "cursor":("prefix":"csr",
+    "value":("pointer",
+      "help",
+      "alias",
+      "all-scroll",
+      "not-allowed",
+      "copy",
+      "wait",
+      "crosshair",
+      "zoom-in",
+      "grab",
+      "not-allowed"
+    )),
+  "display":("prefix":"dis",
+    "value":("block",
+      "inline-block",
+      "flex",
+      "grid",
+      "list-item",
+      "none",
+      "table",
+      "table-row",
+      "table-column",
+      "table-cell",
+      "table-caption"
+    )),
+  "flex-direction":("prefix":"fd",
+    "value":("row",
+      "row-reverse",
+      "column",
+      "column-revrese",
+      "unset"
+    )),
+  "float":("prefix":"f",
+    "value":("inline-start",
+      "inline-end",
+      "left",
+      "right",
+      "unset",
+      "none"
+    )),
+  "flex-wrap":("prefix":"fw",
+    "value":("nowrap",
+      "wrap-reverse",
+      "wrap",
+      "none"
+    )),
+  "align-items":("prefix":"ait",
+    "value":("center",
+      "baseline",
+      "flex-end",
+      "flex-start"
+    )),
+  "justify-content":("prefix":"jc",
+    "value":("center",
+      "space-between",
+      "space-around",
+      "space-evenly",
+      "flex-end",
+      "flex-start"
+    )),
+  "list-style":("prefix":"ls",
+    "value":("circle",
+      "decimal",
+      "disc",
+      "square",
+      "inside",
+      "outside"
+    )),
+  "text-align":("prefix":"tx-a",
+    "value":("center",
+      "end",
+      "justify",
+      "left",
+      "right",
+      "start",
+      "unset"
+    )),
+  "text-decoration":("prefix":"tx-d",
+    "value":("dotted",
+      "double",
+      "line-through",
+      "underline",
+      "overline",
+      "solid",
+      "dotted",
+    )),
+  "pointer-events":("prefix":"po-e",
+    "value":("none",
+      "auto"
+    )),
+  "visibility":("prefix":"v",
+    "value":("visible",
+      "hidden",
+      "collapse"
+    )),
+  "background-position":("prefix":"bg-p",
+    "value":("left",
+      "center",
+      "right",
+      "top",
+      "bottom",
+    )),
+  "text-transform":("prefix":"t-trans",
+    "value":("uppercase",
+      "lowercase",
+      "none",
+      "capitalize",
+      "full-width"
+    )),
+  "text-overflow":("prefix":"t-ovf",
+    "value":("clip",
+      "elipse",
+      "-",
+      "")),
+  "position":("prefix":"pst",
+    "value":("static",
+      "fixed",
+      "relative",
+      "absolute",
+      "sticky"
+    )),
+    "transform":("prefix":"trf",
+    "value":("translate()",
+    "translateX()",
+    "translateY()",
+    "translateZ()",
+    "skew()",
+    "skewX()",
+    "skewY()",
+    "rotateX()",
+    "rotateY()",
+    "rotateZ()",
+    "rotate()",
+    ""
+
+
+    ))
+    );
+/* yaa joo property haa naa background position iss maaa baki app height width kii vlaues bhi diffrent values daaa saktya hoo orr aik dafaa MDN khol lenaa  */
+// transform maa bhi multile function use hotay haan in one property like translate, skew etc
+$border-style: (
+  "prefix": "bs",
+  "value": ("solid",
+    "dashed",
+    "dotted",
+    "double",
+    "oblique"
+  )
+);
+$numbered-values: (
+  "flex-grow":("prefix":"fg",
+    "value":"0"
+  ),
+  "flex-shrink":("prefix":"fs",
+    "value":"0"
+  ),
+  "grid-template-columns":("prefix":"gtc",
+    "value":"0"
+  ),
+  "grid-template-rows":("prefix":"gtr",
+    "value":"0"
+  ),
+  "grid-column-start":("prefix":"gcs",
+    "value":"0"
+  ),
+  "grid-row-start":("prefix":"grs",
+    "value":"0"
+  ),
+  "grid-column-end":("prefix":"gce",
+    "value":"0"
+  ),
+  "grid-row-end":("prefix":"gre",
+    "value":"0"
+  ),
+  "line-height":("prefix":"lh",
+    "value":"0"
+  )
+);
+$colored-properties: (
+  "border-color":("prefix":"b-clr",
+    "value":"black"
+  ),
+  "border-right-color":("prefix":"b-r-clr",
+    "value":"black"
+  ),
+  "border-left-color":("prefix":"b-l-clr",
+    "value":"black"
+  ),
+  "border-bottom-color":("prefix":"b-bt-clr",
+    "value":"black"
+  ),
+  "border-top-color":("prefix":"b-t-clr",
+    "value":"black"
+  ),
+  "outline-color":("prefix":"otl-clr",
+    "value":"black"
+  ),
+);
+$text-shadow-property: (
+  "prefix":"ts",
+  "values":("horizantal-offset":1,
+    "vertical-offset":1,
+    "blur-radius":1,
+    "color":"black"
+  )
+);
+$transition-values: (
+  "prefix":"t",
+  "value":("transition-duration":.15,
+    "transition-property":("all",
+      "none"
+    ),
+    "transition-delay":.15,
+    "transition-timing-function":("ease-in",
+      "ease-out",
+      "ease-in-out",
+      "ease",
+      "linear",
+      "step-start",
+      "step-end"
+    ))
+);
